@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+        .container { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); max-width: 600px; width: 100%; }
+        h1 { text-align: center; color: #333; margin-bottom: 20px; }
+        .add-task { display: flex; margin-bottom: 20px; }
+        input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px 0 0 5px; font-size: 16px; }
+        button { padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 0 5px 5px 0; cursor: pointer; font-size: 16px; transition: background 0.3s; }
+        button:hover { background: #218838; }
+        ul { list-style: none; padding: 0; }
+        .task { display: flex; align-items: center; padding: 15px; margin: 10px 0; background: #f8f9fa; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .task:hover { transform: translateY(-2px); }
+        .task.completed { background: #d4edda; }
+        .task.completed span { text-decoration: line-through; color: #6c757d; }
+        .task input[type="checkbox"] { margin-right: 10px; transform: scale(1.2); }
+        .task span { flex: 1; }
+        .task button { background: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; transition: background 0.3s; }
+        .task button:hover { background: #c82333; }
+        .filters { display: flex; justify-content: center; margin-bottom: 20px; }
+        .filter-btn { margin: 0 5px; padding: 5px 10px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 5px; cursor: pointer; transition: background 0.3s; color: #333; }
+        .filter-btn.active { background: #007bff; color: white; }
+        .filter-btn:hover { background: #e9ecef; }
+        .stats { text-align: center; margin-top: 20px; }
+        .stats p { margin: 5px 0; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-tasks"></i> Task Manager</h1>
+        <div class="add-task">
+            <input type="text" id="task-input" placeholder="Add a new task">
+            <button onclick="addTask()"><i class="fas fa-plus"></i> Add</button>
+        </div>
+        <div class="filters">
+            <button class="filter-btn active" onclick="setFilter('all')">All</button>
+            <button class="filter-btn" onclick="setFilter('pending')">Pending</button>
+            <button class="filter-btn" onclick="setFilter('completed')">Completed</button>
+        </div>
+        <ul id="task-list"></ul>
+        <div class="stats">
+            <p>Total Tasks: <span id="total-tasks">0</span></p>
+            <p>Completed: <span id="completed-tasks">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        let currentFilter = 'all';
+        let draggedIndex = null;
+
+        loadTasks();
+
+        function setFilter(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderTasks();
+        }
+
+        function addTask() {
+            const input = document.getElementById('task-input');
+            const taskText = input.value.trim();
+            if (!taskText) return;
+
+            const tasks = getTasks();
+            tasks.push({ text: taskText, completed: false });
+            saveTasks(tasks);
+            input.value = '';
+            renderTasks();
+        }
+
+        function toggleTask(index) {
+            const tasks = getTasks();
+            tasks[index].completed = !tasks[index].completed;
+            saveTasks(tasks);
+            renderTasks();
+        }
+
+        function deleteTask(index) {
+            const tasks = getTasks();
+            tasks.splice(index, 1);
+            saveTasks(tasks);
+            renderTasks();
+        }
+
+        function dragStart(e, index) {
+            draggedIndex = index;
+        }
+
+        function dragOver(e) {
+            e.preventDefault();
+        }
+
+        function drop(e, index) {
+            e.preventDefault();
+            if (draggedIndex === null || draggedIndex === index) return;
+            const tasks = getTasks();
+            const [dragged] = tasks.splice(draggedIndex, 1);
+            tasks.splice(index, 0, dragged);
+            saveTasks(tasks);
+            renderTasks();
+        }
+
+        function getTasks() {
+            return JSON.parse(localStorage.getItem('tasks')) || [];
+        }
+
+        function saveTasks(tasks) {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        function renderTasks() {
+            const list = document.getElementById('task-list');
+            list.innerHTML = '';
+            const tasks = getTasks();
+            let filteredTasks = tasks;
+            if (currentFilter === 'pending') filteredTasks = tasks.filter(t => !t.completed);
+            if (currentFilter === 'completed') filteredTasks = tasks.filter(t => t.completed);
+
+            let completed = tasks.filter(t => t.completed).length;
+            filteredTasks.forEach((task, originalIndex) => {
+                const li = document.createElement('li');
+                li.className = 'task' + (task.completed ? ' completed' : '');
+                li.draggable = true;
+                li.ondragstart = (e) => dragStart(e, originalIndex);
+                li.ondragover = dragOver;
+                li.ondrop = (e) => drop(e, originalIndex);
+                li.innerHTML = `
+                    <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTask(${originalIndex})">
+                    <span>${task.text}</span>
+                    <button onclick="deleteTask(${originalIndex})"><i class="fas fa-trash"></i></button>
+                `;
+                list.appendChild(li);
+            });
+            document.getElementById('total-tasks').textContent = tasks.length;
+            document.getElementById('completed-tasks').textContent = completed;
+        }
+
+        function loadTasks() {
+            renderTasks();
+        }
+    </script>
+</body>
+</html>
