@@ -9,8 +9,8 @@
         body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; color: #333; }
         .container { max-width: 1200px; margin: 0 auto; }
         .search { display: flex; justify-content: center; margin-bottom: 20px; }
-        input { padding: 10px; width: 300px; border: none; border-radius: 5px 0 0 5px; font-size: 16px; }
-        button { padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 0 5px 5px 0; cursor: pointer; }
+        input { padding: 10px; flex: 1; min-width: 200px; border: none; border-radius: 5px 0 0 5px; font-size: 16px; }
+        button { padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 0 5px 5px 0; cursor: pointer; flex-shrink: 0; }
         .current-weather { background: rgba(255,255,255,0.2); padding: 20px; border-radius: 10px; margin-bottom: 20px; display: grid; grid-template-columns: 1fr 2fr; gap: 20px; align-items: center; }
         .weather-icon { font-size: 5rem; text-align: center; }
         .weather-details h2 { margin: 0; }
@@ -27,17 +27,8 @@
             body {
                 padding: 10px;
             }
-            .search {
-                flex-direction: column;
-                align-items: center;
-            }
             input {
-                width: 80%;
-                border-radius: 5px;
-                margin-bottom: 10px;
-            }
-            button {
-                border-radius: 5px;
+                min-width: 150px;
             }
             .current-weather {
                 grid-template-columns: 1fr;
