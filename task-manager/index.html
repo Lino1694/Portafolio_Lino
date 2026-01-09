@@ -28,6 +28,35 @@
         .filter-btn:hover { background: #e9ecef; }
         .stats { text-align: center; margin-top: 20px; }
         .stats p { margin: 5px 0; font-weight: bold; }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            .add-task {
+                flex-direction: column;
+            }
+            input {
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            button {
+                border-radius: 5px;
+                align-self: flex-start;
+            }
+            .filters {
+                flex-wrap: wrap;
+            }
+            .task {
+                padding: 10px;
+            }
+            .task span {
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>

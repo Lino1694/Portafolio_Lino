@@ -26,6 +26,54 @@
         table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; color: #000; }
         th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; color: #000; }
         th { background: #f8f9fa; font-weight: bold; color: #000; }
+        .sidebar-toggle { display: none; }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .sidebar-toggle {
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background: #343a40;
+                color: white;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                z-index: 1001;
+            }
+            .main-content {
+                margin-left: 0;
+                padding-top: 50px;
+            }
+            .stats {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .card {
+                padding: 15px;
+            }
+            .card i {
+                font-size: 1.5rem;
+            }
+            .card p {
+                font-size: 1.2rem;
+            }
+            table {
+                font-size: 0.8rem;
+                overflow-x: auto;
+                display: block;
+                white-space: nowrap;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -44,6 +92,7 @@
         </ul>
     </div>
     <div class="main-content">
+        <button id="sidebar-toggle" class="sidebar-toggle">☰</button>
         <div id="header" class="header">
             <h1>Welcome to Admin Dashboard</h1>
             <p>Monitor your business metrics</p>
@@ -66,6 +115,9 @@
                     const section = this.textContent.trim().toLowerCase();
                     showSection(section);
                 });
+            });
+            document.getElementById('sidebar-toggle').addEventListener('click', function() {
+                document.querySelector('.sidebar').classList.toggle('open');
             });
         });
 

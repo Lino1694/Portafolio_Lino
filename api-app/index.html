@@ -24,6 +24,33 @@
         .stat i { font-size: 2rem; color: #28a745; }
         .stat p { margin: 5px 0; font-weight: bold; }
         .error { color: red; margin-top: 20px; }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            input {
+                width: 60%;
+            }
+            .user-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .details {
+                text-align: center;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>

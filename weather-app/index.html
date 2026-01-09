@@ -22,6 +22,37 @@
     
         .city-select { margin-bottom: 20px; text-align: center; }
         select { padding: 10px; border-radius: 5px; border: 1px solid #ddd; font-size: 16px; }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .search {
+                flex-direction: column;
+                align-items: center;
+            }
+            input {
+                width: 80%;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            button {
+                border-radius: 5px;
+            }
+            .current-weather {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .weather-icon {
+                font-size: 3rem;
+            }
+            .forecast {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+            .forecast-item {
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 <body>

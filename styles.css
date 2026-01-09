@@ -252,9 +252,29 @@ footer {
     header {
         padding: 1rem;
     }
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     nav a {
-        display: block;
         margin: 0.5rem 0;
+    }
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    #hero p {
+        font-size: 1.3rem;
+    }
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     section {
         padding: 2rem 1rem;
