@@ -61,26 +61,14 @@ nav a:hover {
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #00d4ff 100%);
     color: white;
     height: 100vh;
+    padding-top: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0;
-    animation: slideIn 1s ease-out;
     position: relative;
-}
-
-#hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 30% 40%, rgba(0,212,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 60%, rgba(255,0,128,0.1) 0%, transparent 50%);
-    pointer-events: none;
+    box-sizing: border-box;
 }
 
 #hero h1 {
@@ -113,15 +101,11 @@ nav a:hover {
     background: #0099cc;
 }
 
-@keyframes slideIn {
-    from { transform: translateY(-50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
 @keyframes fadeInUp {
     from { transform: translateY(30px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
 
 section {
     padding: 4rem 2rem;
@@ -139,6 +123,7 @@ section {
 
 #about, #skills, #experience, #education, #projects, #contact {
     padding-top: 6rem;
+    scroll-margin-top: 120px;
 }
 
 #about {
@@ -346,6 +331,11 @@ footer {
     }
     #about, #skills, #experience, #education, #projects, #contact {
         padding-top: 3rem;
+        scroll-margin-top: 80px;
+    }
+    #hero {
+        padding-top: 80px;
+        height: 100vh;
     }
     #hero h1 {
         font-size: 2.5rem;
