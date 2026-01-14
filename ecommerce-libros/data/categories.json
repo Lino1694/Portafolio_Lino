@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ficcion",
+    "name": "Ficción"
+  },
+  {
+    "id": "no-ficcion",
+    "name": "No Ficción"
+  },
+  {
+    "id": "fantasia",
+    "name": "Fantasía"
+  },
+  {
+    "id": "ciencia-ficcion",
+    "name": "Ciencia Ficción"
+  },
+  {
+    "id": "misterio",
+    "name": "Misterio"
+  },
+  {
+    "id": "romance",
+    "name": "Romance"
+  },
+  {
+    "id": "historia",
+    "name": "Historia"
+  },
+  {
+    "id": "biografia",
+    "name": "Biografía"
+  },
+  {
+    "id": "filosofia",
+    "name": "Filosofía"
+  },
+  {
+    "id": "psicologia",
+    "name": "Psicología"
+  },
+  {
+    "id": "ciencia",
+    "name": "Ciencia"
+  },
+  {
+    "id": "poesia",
+    "name": "Poesía"
+  },
+  {
+    "id": "juvenil",
+    "name": "Juvenil"
+  },
+  {
+    "id": "infantil",
+    "name": "Infantil"
+  },
+  {
+    "id": "clasicos",
+    "name": "Clásicos"
+  },
+  {
+    "id": "realismo-magico",
+    "name": "Realismo Mágico"
+  },
+  {
+    "id": "distopia",
+    "name": "Distopía"
+  },
+  {
+    "id": "aventura",
+    "name": "Aventura"
+  },
+  {
+    "id": "thriller",
+    "name": "Thriller"
+  },
+  {
+    "id": "terror",
+    "name": "Terror"
+  }
+]

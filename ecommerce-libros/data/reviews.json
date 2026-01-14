@@ -1,0 +1,107 @@
+[
+  {
+    "bookId": "LIB001",
+    "user": "María García",
+    "rating": 5,
+    "text": "Una obra maestra del realismo mágico. García Márquez crea un mundo fascinante que te transporta completamente.",
+    "date": "2023-10-15"
+  },
+  {
+    "bookId": "LIB001",
+    "user": "Carlos Rodríguez",
+    "rating": 4,
+    "text": "Excelente narrativa, aunque requiere paciencia. La complejidad de la historia vale la pena.",
+    "date": "2023-09-22"
+  },
+  {
+    "bookId": "LIB002",
+    "user": "Ana López",
+    "rating": 5,
+    "text": "1984 es más relevante que nunca. Orwell predijo muchos aspectos de nuestra sociedad actual.",
+    "date": "2023-11-03"
+  },
+  {
+    "bookId": "LIB002",
+    "user": "Pedro Sánchez",
+    "rating": 4,
+    "text": "Un clásico distópico que te hace reflexionar sobre el poder y la libertad.",
+    "date": "2023-08-17"
+  },
+  {
+    "bookId": "LIB003",
+    "user": "Laura Martín",
+    "rating": 5,
+    "text": "El Principito es un libro para todas las edades. Sus enseñanzas sobre la vida son profundas y bellas.",
+    "date": "2023-12-01"
+  },
+  {
+    "bookId": "LIB005",
+    "user": "Diego Fernández",
+    "rating": 5,
+    "text": "¡El inicio perfecto de una saga mágica! Rowling crea un mundo increíble que te atrapa desde la primera página.",
+    "date": "2023-10-28"
+  },
+  {
+    "bookId": "LIB005",
+    "user": "Sofia Ruiz",
+    "rating": 5,
+    "text": "Magia, amistad y aventuras. Un libro que marcó mi infancia y que recomiendo a todos.",
+    "date": "2023-09-14"
+  },
+  {
+    "bookId": "LIB006",
+    "user": "Javier Gómez",
+    "rating": 4,
+    "text": "Una visión fascinante de la historia humana. Harari explica conceptos complejos de manera accesible.",
+    "date": "2023-11-19"
+  },
+  {
+    "bookId": "LIB008",
+    "user": "Elena Torres",
+    "rating": 5,
+    "text": "Atmósfera gótica perfecta. Ruiz Zafón teje una historia de misterio y literatura que te mantiene enganchado.",
+    "date": "2023-07-30"
+  },
+  {
+    "bookId": "LIB009",
+    "user": "Miguel Ángel",
+    "rating": 4,
+    "text": "Una fábula espiritual hermosa. Coelho nos recuerda que debemos seguir nuestros sueños.",
+    "date": "2023-08-25"
+  },
+  {
+    "bookId": "LIB011",
+    "user": "Isabel Castro",
+    "rating": 5,
+    "text": "¡Increíble! Rothfuss crea personajes memorables y un mundo de fantasía rico en detalles.",
+    "date": "2023-12-05"
+  },
+  {
+    "bookId": "LIB014",
+    "user": "Roberto Vega",
+    "rating": 5,
+    "text": "Tolkien es el maestro de la fantasía. El Hobbit es una aventura épica que nunca envejece.",
+    "date": "2023-06-12"
+  },
+  {
+    "bookId": "LIB015",
+    "user": "Carmen Díaz",
+    "rating": 4,
+    "text": "Interesante exploración de cómo pensamos. Kahneman explica conceptos psicológicos de manera clara.",
+    "date": "2023-11-08"
+  },
+  {
+    "bookId": "LIB018",
+    "user": "Fernando Morales",
+    "rating": 5,
+    "text": "Una historia conmovedora narrada desde una perspectiva única. Zusak maneja la Segunda Guerra Mundial con sensibilidad.",
+    "date": "2023-09-03"
+  },
+  {
+    "bookId": "LIB022",
+    "user": "Patricia Herrera",
+    "rating": 4,
+    "text": "Acción constante y personajes fuertes. Collins crea un mundo distópico creíble y adictivo.",
+    "date": "2023-10-20"
+  }
+]

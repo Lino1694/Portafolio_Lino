@@ -1,0 +1,128 @@
+:root {
+  --color-cream: #f8f5f2;
+  --color-brown-dark: #2c1810;
+  --color-leather: #8b4513;
+  --color-gold: #d4a76a;
+  --color-oxford: #4a6fa5;
+  --color-terracotta: #c44536;
+  --color-white: #ffffff;
+  --color-gray-light: #e0e0e0;
+  --color-gray-dark: #666666;
+  --shadow-subtle: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+  --font-title: 'Playfair Display', serif;
+  --font-content: 'Lora', serif;
+  --font-ui: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-content);
+  background-color: var(--color-cream);
+  color: var(--color-brown-dark);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-oxford);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-leather);
+}
+
+button, input, select, textarea {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-leather);
+  color: var(--color-white);
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: var(--color-brown-dark);
+}
+
+input, select, textarea {
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-oxford);
+  box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.2);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
